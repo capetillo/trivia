@@ -6,54 +6,39 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Who Wants To Be A Full-Stack Developer</title>
     <style>
-    @font-face {
-        font-family: "copperplate";
-        src: url("C:/Users/carolina/Downloads/copperplate.ttf");
-    }</style>
+        @font-face {
+            font-family: "copperplate";
+            src: url("C:/Users/carolina/Downloads/copperplate.ttf");
+        }
+         @font-face {
+            font-family: "expressway";
+            src: url("C:/Users/carolina/Downloads/expressway.ttf");
+        }
+        </style>
     <script defer src="js/main.js"></script>
     <link rel="stylesheet" href="css/main.css">
 </head>
 <body>
-        <!-- <div data-video = "VIDEO_ID"  
-         data-startseconds = "15"         
-         data-endseconds = "29"    
-         data-height = "480" 
-         data-width = "640" 
-         id = "youtube-player">
-    </div> 
-    
-    <script src="https://www.youtube.com/watch?v=eEuMWN2sTdM"></script>
-    <script type="text/javascript">
-      function onYouTubeIframeAPIReady() {
-        var ctrlq = document.getElementById("youtube-player");
-        var player = new YT.Player('youtube-player', {
-          height: ctrlq.dataset.height,
-          width: ctrlq.dataset.width,
-          events: {
-            'onReady': function(e) {
-              e.target.cueVideoById({ 
-                videoId: ctrlq.dataset.video,
-                startSeconds: ctrlq.dataset.startseconds,
-                endSeconds: ctrlq.dataset.endseconds
-              });
-            }
-          } 
-        }); 
-      }  -->
     </script>
+    <p id="timer"></p>
     <h1 class="header">Who Wants To Be A Full-Stack Developer</h1>
     <div class="button-container">
-     <button id="start">START</button>
-
+            <button id="start">START</button> 
     </div>
     
     <div class="question-and-answers">
-        <div class="questions" id="_question"></div>
-        <div class = "answers">
-            <button id="A"></button>
-            <button id="B"></button>
-            <button id="C"></button>
-            <button id="D"></button>
+        
+        <div class="questions"></div>
+        
+        <div class="answers">
+            
+                <button id="A"></button>
+                
+                <button id="B"></button>
+           
+                <button id="C"></button>
+                
+                <button id="D"></button>
         </div>
     </div>
     <h1 class="loser">You Lost</h1>
