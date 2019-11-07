@@ -3,9 +3,15 @@
 }
 body {
     color: white;
-    background: url(https://images.ctfassets.net/m9t8fn3f4fre/7v43aGpsOfzA66mrYuVF7p/33f6053190b842dda5001a08b36b10f6/Background_BaseGame_1280x720__1_.png)
+    background: url(https://i.imgur.com/1YQ2PRF.png);
+    background-size: center;
+    background-repeat: no-repeat;
 }
-h1{
+#timer {
+    color: white;
+    text-align: center;
+}
+.header {
     font-family: "copperplate";
     text-align: center;
     margin: 250px 0 0 0;

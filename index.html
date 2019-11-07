@@ -10,24 +10,29 @@
             font-family: "copperplate";
             src: url("C:/Users/carolina/Downloads/copperplate.ttf");
         }
-         @font-face {
+        @font-face {
             font-family: "expressway";
             src: url("C:/Users/carolina/Downloads/expressway.ttf");
         }
+
         </style>
     <script defer src="js/main.js"></script>
     <link rel="stylesheet" href="css/main.css">
 </head>
 <body>
-    </script>
-    <p id="timer"></p>
-    <h1 class="header">Who Wants To Be A Full-Stack Developer</h1>
+    <video autoplay controls>
+        <source src="js/video.mp4" type="video/mp4">
+    </video>
+    <p id="timer"></p> 
+    <!-- <span source="https://imgur.com/1YQ2PRF"></span> -->
+    <h1 class="header">Who Wants To Be A Full-Stack Developer</h1> 
+   
     <div class="button-container">
             <button id="start">START</button> 
     </div>
     
     <div class="question-and-answers">
-        
+
         <div class="questions"></div>
         
         <div class="answers">
@@ -42,5 +47,6 @@
         </div>
     </div>
     <h1 class="loser">You Lost</h1>
+    <h1 class="ran_out">You Ran Out Of Time</h1>
 </body>
 </html>
