@@ -5,27 +5,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Who Wants To Be A Full-Stack Developer</title>
-    <style>
-        @font-face {
-            font-family: "copperplate";
-            src: url("C:/Users/carolina/Downloads/copperplate.ttf");
-        }
-        @font-face {
-            font-family: "expressway";
-            src: url("C:/Users/carolina/Downloads/expressway.ttf");
-        }
-
-        </style>
-    <script defer src="js/main.js"></script>
     <link rel="stylesheet" href="css/main.css">
+    <script defer src="js/main.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Monoton&display=swap" rel="stylesheet">
+    
 </head>
 <body>
-    <video autoplay controls>
+    <!-- <video autoplay controls>
         <source src="js/video.mp4" type="video/mp4">
-    </video>
+    </video> -->
     <p id="timer"></p> 
     <!-- <span source="https://imgur.com/1YQ2PRF"></span> -->
-    <h1 class="header">Who Wants To Be A Full-Stack Developer</h1> 
    
     <div class="button-container">
             <button id="start">START</button> 
@@ -36,14 +26,16 @@
         <div class="questions"></div>
         
         <div class="answers">
-            
+            <div id="line1">
                 <button id="A"></button>
                 
                 <button id="B"></button>
-           
+            </div>
+            <div id="line2">
                 <button id="C"></button>
                 
                 <button id="D"></button>
+            </div>
         </div>
     </div>
     <h1 class="loser">You Lost</h1>

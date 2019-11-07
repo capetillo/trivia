@@ -1,9 +1,8 @@
 //VARIABLES
 var audio = new Audio("js/song.mp3");
-var video = new Video("js/video.mp4")
+// var video = new Video("js/video.mp4")
 var clock = document.getElementById("timer");
 var startBtn = document.getElementById("start");
-var header = document.querySelector(".header");
 var questionAndAnswers = document.querySelector(".question-and-answers");
 var questions = document.querySelector(".questions");
 var answers = document.querySelector(".answers");
@@ -239,7 +238,6 @@ function showQuestions(order) {
 //Makes start button's visibility hidden and questions visible
 function begin() {
     startBtn.style.visibility = "hidden";
-    header.style.visibility = "hidden";
     questions.style.visibility = "visible";
     answers.style.visibility = "visible";
     body.style.background = "url(https://images.ctfassets.net/m9t8fn3f4fre/7v43aGpsOfzA66mrYuVF7p/33f6053190b842dda5001a08b36b10f6/Background_BaseGame_1280x720__1_.png)";

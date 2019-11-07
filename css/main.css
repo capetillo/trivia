@@ -3,21 +3,13 @@
 }
 body {
     color: white;
-    background: url(https://i.imgur.com/1YQ2PRF.png);
-    background-size: center;
-    background-repeat: no-repeat;
+    background: url(https://i.imgur.com/1YQ2PRF.png) no-repeat center center fixed;
+    background-color: rgb(67, 94, 167);
+    font-family: 'ZCOOL XiaoWei', serif;
 }
 #timer {
     color: white;
     text-align: center;
-}
-.header {
-    font-family: "copperplate";
-    text-align: center;
-    margin: 250px 0 0 0;
-    -webkit-text-fill-color: white; 
-    -webkit-text-stroke-width: 1px;
-    -webkit-text-stroke-color: black;
 }
 .button-container {
     display: flex;
@@ -28,15 +20,14 @@ body {
     padding: 0px 5%;
     text-align: center;
     display: table;
-    width: 75%;
+    width: 30%;
     font-size: 18px;
     line-height: 22px;
     height: 80px;
     overflow: hidden;
-    font-family: "expressway";
+    font-family: 'Monoton', cursive;
     background: linear-gradient(rgb(55, 68, 77), rgb(4, 18, 29));
     margin: 0 auto;
-    font-family: Helvetica;
     border-radius: 30%;
 }
 
@@ -44,29 +35,28 @@ body {
     background: rgb(226, 170, 79);
     color: black;
   }
-
- #line1 {
-     border-bottom: solid white;
-     border-width: 1px;
-     margin-bottom: 100%;  
- } 
   .questions {
     color: white;
     padding: 0px 5%;
     text-align: center;
     display: table;
     width: 340px;
-    font-size: 18px;
+    font-size: 28px;
     line-height: 22px;
     height: 40px;
     overflow: hidden;
     font-family: Arial, Verdana, "Helvetica CY", sans-serif;
     background: linear-gradient(rgb(75, 92, 104), rgb(4, 18, 29));
-    margin: 0 auto;
+    margin: auto;
+    margin-bottom: 50px;
     font-family: Helvetica;
     border-radius: 30%;
     border: 1px solid white;
   }
+  #line1 {
+    display: flex;
+    justify-content: space-between;  
+} 
 
   #A {
     color: white;
@@ -108,6 +98,11 @@ body {
     background: rgb(226, 170, 79);
     color: black;
   }
+#line2 {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 30px;
+}
 #C {
     color: white;
     padding: 0px 5%;
