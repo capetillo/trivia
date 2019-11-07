@@ -143,6 +143,14 @@ body {
     background: rgb(226, 170, 79);
     color: black;
   }
-/* #loser {
-    
-  } */
+  h1 {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    margin-top: -50px;
+    margin-left: -100px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+  }
+  #replay {
+      
+  }

@@ -13,6 +13,8 @@ var answerD = document.getElementById("D");
 var youLose = document.querySelector(".loser");
 var ranOutOfTime = document.querySelector(".ran_out");
 var body = document.querySelector("body");
+var replayBtn = document.getElementById("replay");
+var winner = document.getElementById("winner");
 
 
 
@@ -132,11 +134,20 @@ const setOfQuestions = [
 ];
 
 
-
 function checkAnswer(evt) {
     setOfQuestions[questionNum].userAnswer = evt.target.textContent; 
     console.log('THEIR ANSWER' , evt.target.textContent);
-    if (setOfQuestions[questionNum].userAnswer === setOfQuestions[questionNum].correctAnswer){
+    console.log("QUESTION NUM ", questionNum)
+    if (questionNum === 13) {
+        winner.style.visibility = "visible"; 
+        answerA.style.visibility = "hidden";
+        answerB.style.visibility = "hidden";
+        answerC.style.visibility = "hidden";
+        answerD.style.visibility = "hidden";
+        questions.style.visibility = "hidden";
+        return;  
+    }
+    if (setOfQuestions[questionNum].userAnswer === setOfQuestions[questionNum].correctAnswer) {
         //setOfQuestions[questionNum].passed === true;
         questionNum += 1;
         showQuestions(questionNum);
@@ -146,8 +157,11 @@ function checkAnswer(evt) {
         answerC.style.visibility = "hidden";
         answerD.style.visibility = "hidden";
         questions.style.visibility = "hidden";
-        youLose.style.visibility = "visible";
-        //setOfQuestions[questionNum].passed === false;
+        ranOutOfTime.style.visibility = "visible";
+        replayBtn.style.visibility = "visible";
+        clock.style.visibility = "hidden";
+        clearInterval(count);
+        clearTimeout(timer);  
     } else {
         answerA.style.visibility = "hidden";
         answerB.style.visibility = "hidden";
@@ -155,10 +169,12 @@ function checkAnswer(evt) {
         answerD.style.visibility = "hidden";
         questions.style.visibility = "hidden";
         youLose.style.visibility = "visible";
+        replayBtn.style.visibility = "visible";
+        clock.style.visibility = "hidden";
+        clearInterval(count);
+        clearTimeout(timer); 
     }
 }
-
-
 
 let count;
 
@@ -173,31 +189,35 @@ function startTimer(seconds) {
     }, 1000); 
 }
 
-
 let timer;
 
 function checkForLoss() {
    
     timer = setTimeout(function() {
             
-            if (questions.style.visibility !== "hidden" && answers.style.visibility !== "hidden") { 
+            if (questions.style.visibility !== "hidden" && answerA.style.visibility !== "hidden"
+            && answerB.style.visibility !== "hidden" && answerC.style.visibility !== "hidden"
+            && answerD.style.visibility !== "hidden") { 
                 answerA.style.visibility = "hidden";
                 answerB.style.visibility = "hidden";
                 answerC.style.visibility = "hidden";
                 answerD.style.visibility = "hidden";
                 questions.style.visibility = "hidden";
                 ranOutOfTime.style.visibility = "visible";
+                replayBtn.style.visibility = "visible";
             }
-    } , questionNum < 4 ? 16000 : questionNum < 9 ? 31000 : questionNum < 14 ? 46000 : 15000);     
+    } , questionNum < 4 ? 16000 : questionNum < 9 ? 31000 : questionNum < 14 ? 46000 : 0);     
 } 
   
 
-//APPEARANCE?
+//APPEARANCE AT BEGINNING AND WHEN REPLAY IS CLICKED
 function init() {
+    replayBtn.style.visibility = "hidden";
     questions.style.visibility = "hidden";
     answers.style.visibility = "hidden";
     youLose.style.visibility = "hidden";
     ranOutOfTime.style.visibility = "hidden";
+    winner.style.visibility = "hidden";
         for(let i = 0; i < answers.children.length; i++) {
             answerA.addEventListener("click", checkAnswer);
             answerB.addEventListener("click", checkAnswer);
@@ -205,11 +225,6 @@ function init() {
             answerD.addEventListener("click", checkAnswer);
         }
 }
-
-
-
-//Pushes clicked answer into theirAnswer and compares it to correctAnswer
-
 
 
 //Makes questions + options visible
@@ -232,16 +247,28 @@ function showQuestions(order) {
     
 }
 
-
+replayBtn.addEventListener('click', function() {
+    body.style.background = "url(https://i.imgur.com/1YQ2PRF.png) no-repeat center center fixed";
+    body.style.backgroundColor = "rgb(67, 94, 167)";
+    startBtn.style.visibility = "visible";
+    questionNum = 0;
+        init();
+    });
 
 
 //Makes start button's visibility hidden and questions visible
 function begin() {
+    winner.style.visibility = "hidden";
+    replayBtn.style.visibility = "hidden";
     startBtn.style.visibility = "hidden";
     questions.style.visibility = "visible";
-    answers.style.visibility = "visible";
+    answerA.style.visibility = "visible";
+    answerB.style.visibility = "visible";
+    answerC.style.visibility = "visible";
+    answerD.style.visibility = "visible";
     body.style.background = "url(https://images.ctfassets.net/m9t8fn3f4fre/7v43aGpsOfzA66mrYuVF7p/33f6053190b842dda5001a08b36b10f6/Background_BaseGame_1280x720__1_.png)";
-    //audio.play();
+    audio.play();
+    clock.style.visibility = "visible";
     showQuestions(questionNum);
     
     }
