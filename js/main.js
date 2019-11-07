@@ -3,7 +3,6 @@ var audio = new Audio("js/song.mp3");
 // var video = new Video("js/video.mp4")
 var clock = document.getElementById("timer");
 var startBtn = document.getElementById("start");
-var questionAndAnswers = document.querySelector(".question-and-answers");
 var questions = document.querySelector(".questions");
 var answers = document.querySelector(".answers");
 var answerA = document.getElementById("A");
@@ -15,121 +14,102 @@ var ranOutOfTime = document.querySelector(".ran_out");
 var body = document.querySelector("body");
 var replayBtn = document.getElementById("replay");
 var winner = document.getElementById("winner");
-
-
-
-// console.log("this is all of it", questionAndAnswers);
-// console.log("this is questions", questions);
-// console.log("these are all the answers", answers);
-// console.log("this is answer A", answerA);
+var questionNumber = document.getElementById("question_number")
 
 let questionNum = 0;
 
+questionNumber = 1 + questionNum
+
 const setOfQuestions = [
     {
-        question: "If it's not an object, then what is it?",
-        options: ["An array", "A primitive", "A variable", "CSS"],
-        correctAnswer: "A primitive",
+        question: "HOW DO YOU SAY NOT EQUAL TO IN JAVASCRIPT?",
+        options: ["/==", ".NOTEQUAL", "0", "!=="],
+        correctAnswer: "!==",
         userAnswer: null,
-        passed: null,
     },
     {
-        question: "2 + 2",
+        question: "WHICH OF THE FOLLOWING DOES NOT HAVE THE RIGHT SYNTAX FOR A FUNCTION?",
+        options: ["LET X = FUNCTION[] ()", "VAR X = FUNCTION(){}", "FUNCTION = () => {}", "FUNCTION(){}"],
+        correctAnswer: "LET X = FUNCTION[] ()",
+        userAnswer: null,
+    },
+    {
+        question: "IF IT'S NOT AN OBJECT, THEN WHAT IS IT?",
+        options: ["AN ARRAY", "A PRIMITIVE", "A VARIABLE", "CSS"],
+        correctAnswer: "A PRIMITIVE",
+        userAnswer: null,
+    },
+    {
+        question: "WHICH OF THE FOLLOWING METHODS HAS AN ACCUMULATOR AS A CALLBACK ARGUMENT?",
+        options: ["REDUCE", "FILTER", "SOME", "FIND"],
+        correctAnswer: "REDUCE",
+        userAnswer: null,
+    },
+    {
+        question: "WHEN IS A FUNCTION CONSIDERED TO BE A METHOD?",
+        options: ["WHEN IT IS ANONYMOUS", "WHEN IT IS A CALLBACK FUNCTION", "WHEN IT IS WITHIN AN OBJECT", "WHEN IT IS A RECURSIVE FUNCTION"],
+        correctAnswer: "WHEN IT IS WITHIN AN OBJECT",
+        userAnswer: null,
+    },
+    {
+        question: "WHAT IS THE NAME OF THE PROPERTY ON EVENT LISTENERS THAT REPRESENTS THE DOM ELEMENT THAT DISPATCHES THE EVENT?",
+        options: ["TARGET", "CALLBACK FUNCTION", ".ADD", "CLICK"],
+        correctAnswer: "TARGET",
+        userAnswer: null,
+    },
+    {
+        question: "WHAT VALUE IS THE DEFAULT FOR THE FLEX-DIRECTION PROPERTY?",
+        options: ["GRID-BOX", "ROW", "FLEXBOX", "COLUMN"],
+        correctAnswer: "ROW",
+        userAnswer: null,
+    },
+    {
+        question: "A LOOP THAT NEVER ENDS IS CALLED A ______",
+        options: ["FOR LOOP", "FOR EACH LOOP", "INFINITE LOOP", "INFINITY.BED.BATH.AND.BEYOND"],
+        correctAnswer: "INFINITE LOOP",
+        userAnswer: null,
+    },
+    {
+        question: "WHY DO CLASSES EXIST IN OOP",
+        options: ["TO DISTINGUISH BETWEEN OBJECTS", "TO ACCESS HTML CLASSES", "TO CALL CONSTRUCTOR METHODS", "TO CREATE OBJECTS"],
+        correctAnswer: "TO CREATE OBJECTS",
+        userAnswer: null,
+    },
+    {
+        question: "WHAT'S A CALLBACK FUNCTION",
+        options: ["A FOREACH METHOD", "AN ANONYMOUS FUNCTION PASSED AS AN ARGUMENT", "A FUNCTION PASSED AS AN ARGUMENT", "AN ARRAY OF FUNCTIONS"],
+        correctAnswer: "A FUNCTION BEING PASSED AS AN ARGUMENT",
+        userAnswer: null,
+    },
+    {
+        question: "WHAT DOES JQUERY RETURN WHEN IT IS PASSED A STRING REPRESENTING A CSS3 SELECTOR RULE?",
+        options: ["AN OBJECT OF ARRAYS", "A CALLBACK", "AN ARRAY OF RULES", "A JQUERY OBJECT"],
+        correctAnswer: "A JQUERY OBJECT",
+        userAnswer: null,
+    },
+    {
+        question: "LAST ONE",
         options: ["I know", "4", "Don't care", "Confused"],
         correctAnswer: "4",
         userAnswer: null,
-        passed: null,
     },
     {
-        question: "2 + 3",
-        options: ["5", "Don't know", "Don't care", "Confused"],
-        correctAnswer: "5",
+        question: "WHERE IS A A FUNCTION PLACED WHEN INVOKED?",
+        options: ["CALLSTACK", "ARRAY ITERATOR", "CALLBACK", "CLASS OBJECTS"],
+        correctAnswer: "CALLSTACK",
         userAnswer: null,
-        passed: null,
     },
     {
-        question: "3 - 1",
-        options: ["I know", "2", "Don't care", "Confused"],
-        correctAnswer: "2",
+        question: "WHAT CSS FEATURE IS FUNAMENTAL TO THE IMPLEMENTATION OF RESPONSIVE DESIGN?",
+        options: ["@SUPPORTS", "RESPONSIVE-DESIGN: ACTIVE;", "MOCHA", "@MEDIA QUERIES"],
+        correctAnswer: "@MEDIA QUERIES",
         userAnswer: null,
-        passed: null,
     },
     {
-        question: "3 + 1",
-        options: ["I know", "4", "Don't care", "Confused"],
-        correctAnswer: "4",
+        question: "WHICH OF THE FOLLOWING IS NOT TRUE ABOUT .THIS?",
+        options: ["IT IS ACCESSIBLE IN THE GLOBAL SCOPE", "IT IS A PRE-DEFINED VARIABLE", "ITS VALUE CANNOT BE CHANGED", "A WAY TO IMPLEMENT CODE REUSE"],
+        correctAnswer: "ITS VALUE CANNOT BE CHANGED",
         userAnswer: null,
-        passed: null,
-    },
-    {
-        question: "6 x 2",
-        options: ["I know", "12", "Don't care", "Confused"],
-        correctAnswer: "12",
-        userAnswer: null,
-        passed: null,
-    },
-    {
-        question: "7 + 1",
-        options: ["I know", "8", "Don't care", "Confused"],
-        correctAnswer: "8",
-        userAnswer: null,
-        passed: null,
-    },
-    {
-        question: "0 + 1",
-        options: ["I know", "1", "Don't care", "Confused"],
-        correctAnswer: "1",
-        userAnswer: null,
-        passed: null,
-    },
-    {
-        question: "2 x 2",
-        options: ["I know", "4", "Don't care", "Confused"],
-        correctAnswer: "4",
-        userAnswer: null,
-        passed: null,
-    },
-    {
-        question: "5 + 4",
-        options: ["I know", "9", "Don't care", "Confused"],
-        correctAnswer: "9",
-        userAnswer: null,
-        passed: null,
-    },
-    {
-        question: "10 - 1",
-        options: ["I know", "9", "Don't care", "Confused"],
-        correctAnswer: "9",
-        userAnswer: null,
-        passed: null,
-    },
-    {
-        question: "8 x 2",
-        options: ["I know", "16", "Don't care", "Confused"],
-        correctAnswer: "16",
-        userAnswer: null,
-        passed: null,
-    },
-    {
-        question: "10 + 1",
-        options: ["I know", "11", "Don't care", "Confused"],
-        correctAnswer: "11",
-        userAnswer: null,
-        passed: null,
-    },
-    {
-        question: "you're finished",
-        options: ["I know", "congrats", "Don't care", "Confused"],
-        correctAnswer: "congrats",
-        userAnswer: null,
-        passed: null,
-    },
-    {
-        question: "you're finished",
-        options: ["I know", "congrats", "Don't care", "Confused"],
-        correctAnswer: "congrats",
-        userAnswer: null,
-        passed: null,
     }
 ];
 
@@ -140,37 +120,34 @@ function checkAnswer(evt) {
     console.log("QUESTION NUM ", questionNum)
     if (questionNum === 13) {
         winner.style.visibility = "visible"; 
-        answerA.style.visibility = "hidden";
-        answerB.style.visibility = "hidden";
-        answerC.style.visibility = "hidden";
-        answerD.style.visibility = "hidden";
+        answers.style.visibility = "hidden";
         questions.style.visibility = "hidden";
+        clock.style.visibility = "hidden";
+        replayBtn.style.visibility = "visible"
+        clearInterval(count);
+        clearTimeout(timer); 
+        //questionNumber.style.visibility = "hidden";
         return;  
     }
     if (setOfQuestions[questionNum].userAnswer === setOfQuestions[questionNum].correctAnswer) {
-        //setOfQuestions[questionNum].passed === true;
         questionNum += 1;
         showQuestions(questionNum);
      } else if (setOfQuestions[questionNum].userAnswer === null) {
-        answerA.style.visibility = "hidden";
-        answerB.style.visibility = "hidden";
-        answerC.style.visibility = "hidden";
-        answerD.style.visibility = "hidden";
+        answers.style.visibility = "hidden";
         questions.style.visibility = "hidden";
         ranOutOfTime.style.visibility = "visible";
         replayBtn.style.visibility = "visible";
         clock.style.visibility = "hidden";
+        //questionNumber.style.visibility = "hidden";
         clearInterval(count);
         clearTimeout(timer);  
     } else {
-        answerA.style.visibility = "hidden";
-        answerB.style.visibility = "hidden";
-        answerC.style.visibility = "hidden";
-        answerD.style.visibility = "hidden";
+        answers.style.visibility = "hidden";
         questions.style.visibility = "hidden";
         youLose.style.visibility = "visible";
         replayBtn.style.visibility = "visible";
         clock.style.visibility = "hidden";
+        //questionNumber.style.visibility = "hidden";
         clearInterval(count);
         clearTimeout(timer); 
     }
@@ -195,13 +172,8 @@ function checkForLoss() {
    
     timer = setTimeout(function() {
             
-            if (questions.style.visibility !== "hidden" && answerA.style.visibility !== "hidden"
-            && answerB.style.visibility !== "hidden" && answerC.style.visibility !== "hidden"
-            && answerD.style.visibility !== "hidden") { 
-                answerA.style.visibility = "hidden";
-                answerB.style.visibility = "hidden";
-                answerC.style.visibility = "hidden";
-                answerD.style.visibility = "hidden";
+             if (questions.style.visibility !== "hidden" && answers.style.visibility !== "hidden") {
+                answers.style.visibility = "hidden";
                 questions.style.visibility = "hidden";
                 ranOutOfTime.style.visibility = "visible";
                 replayBtn.style.visibility = "visible";
@@ -209,9 +181,9 @@ function checkForLoss() {
     } , questionNum < 4 ? 16000 : questionNum < 9 ? 31000 : questionNum < 14 ? 46000 : 0);     
 } 
   
-
 //APPEARANCE AT BEGINNING AND WHEN REPLAY IS CLICKED
 function init() {
+    //questionNumber.style.visibility = "hidden";
     replayBtn.style.visibility = "hidden";
     questions.style.visibility = "hidden";
     answers.style.visibility = "hidden";
@@ -225,7 +197,6 @@ function init() {
             answerD.addEventListener("click", checkAnswer);
         }
 }
-
 
 //Makes questions + options visible
 function showQuestions(order) {
@@ -258,20 +229,17 @@ replayBtn.addEventListener('click', function() {
 
 //Makes start button's visibility hidden and questions visible
 function begin() {
+    //questionNumber.style.visibility = "visible";
     winner.style.visibility = "hidden";
     replayBtn.style.visibility = "hidden";
     startBtn.style.visibility = "hidden";
     questions.style.visibility = "visible";
-    answerA.style.visibility = "visible";
-    answerB.style.visibility = "visible";
-    answerC.style.visibility = "visible";
-    answerD.style.visibility = "visible";
+    answers.style.visibility = "visible";
     body.style.background = "url(https://images.ctfassets.net/m9t8fn3f4fre/7v43aGpsOfzA66mrYuVF7p/33f6053190b842dda5001a08b36b10f6/Background_BaseGame_1280x720__1_.png)";
     audio.play();
     clock.style.visibility = "visible";
     showQuestions(questionNum);
-    
-    }
+}
 
 startBtn.addEventListener("click", begin); 
 

@@ -143,6 +143,9 @@ body {
     background: rgb(226, 170, 79);
     color: black;
   }
+  #score {
+
+  }
   h1 {
     position: fixed;
     top: 50%;
@@ -152,5 +155,5 @@ body {
     font-family: Georgia, 'Times New Roman', Times, serif;
   }
   #replay {
-      
+
   }
