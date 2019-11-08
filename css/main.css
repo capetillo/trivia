@@ -5,51 +5,80 @@ body {
     color: white;
     background: url(https://i.imgur.com/1YQ2PRF.png) no-repeat center center fixed;
     background-color: rgb(67, 94, 167);
-    font-family: 'ZCOOL XiaoWei', serif;
+    background-size: 500px;
+    font-family: 'Expletus Sans', cursive;
+    
 }
 #timer {
     color: white;
     text-align: center;
 }
-.button-container {
-    display: flex;
-    margin: 5% 0;
-}
-#start {
-    color: white;
-    padding: 0px 5%;
-    text-align: center;
-    display: table;
-    width: 30%;
-    font-size: 80%;
-    line-height: 22px;
-    height: 80px;
-    overflow: hidden;
-    font-family: 'Monoton', cursive;
-    background: linear-gradient(rgb(55, 68, 77), rgb(4, 18, 29));
+ #start {
+    display: block;
     margin: 0 auto;
-    border-radius: 30%;
-}
-
-#start:hover {
-    background: rgb(226, 170, 79);
-    color: black;
-  }
-  .questions {
+    display: flex;
+    justify-content: space-evenly;
+    margin: 0 auto;
+    margin-top: 50px;
     color: white;
     padding: 0px 5%;
     text-align: center;
     display: table;
     width: 340px;
+    font-size: 250%;
+    line-height: 22px;
+    height: 60px;
+    overflow: hidden;
+    font-family: 'Faster One', cursive;
+    background: linear-gradient(rgb(75, 92, 104), rgb(4, 18, 29));
+    border-radius: 30%;
+} 
+
+#start:hover {
+    background: rgb(226, 170, 79);
+    color: black;
+  }
+  #replay {
+    display: block;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-evenly;
+    margin: 0 auto;
+    margin-top: 50px;
+    color: white;
+    padding: 0px 5%;
+    text-align: center;
+    display: table;
+    width: 340px;
+    font-size: 250%;
+    line-height: 22px;
+    height: 60px;
+    overflow: hidden;
+    font-family: 'Faster One', cursive;
+    background: linear-gradient(rgb(75, 92, 104), rgb(4, 18, 29));
+    border-radius: 30%;
+  } 
+ #replay:hover {
+    background: rgb(226, 170, 79);
+    color: black;
+  } 
+/* #questions_answers {
+    display: flex;
+} */
+  .questions {
+    position: relative;
+    justify-content: center;
+    color: white;
+    padding: 0px 5%;
+    text-align: center;
+    align-items: center;
+    width: 340px;
     font-size: 80%;
     line-height: 22px;
     height: 40px;
     overflow: hidden;
-    font-family: Arial, Verdana, "Helvetica CY", sans-serif;
     background: linear-gradient(rgb(75, 92, 104), rgb(4, 18, 29));
-    margin: auto;
-    margin-bottom: 50px;
-    font-family: Helvetica;
+    margin: 0 auto;
     border-radius: 30%;
     border: 1px solid white;
   }
@@ -62,22 +91,21 @@ body {
     color: white;
     padding: 0px 5%;
     text-align: center;
-    display: table;
+    display: table; 
     width: 340px;
     font-size: 80%;
     line-height: 22px;
     height: 40px;
     overflow: hidden;
-    font-family: Arial, Verdana, "Helvetica CY", sans-serif;
     background: linear-gradient(rgb(75, 92, 104), rgb(4, 18, 29));
     margin: 0 auto;
-    font-family: Helvetica;
     border-radius: 30%;
+    font-family: 'Expletus Sans', cursive;
 }
 #A:hover {
     background: rgb(226, 170, 79);
     color: black;
-  }
+}
   #B {
     color: white;
     padding: 0px 5%;
@@ -88,11 +116,10 @@ body {
     line-height: 22px;
     height: 40px;
     overflow: hidden;
-    font-family: Arial, Verdana, "Helvetica CY", sans-serif;
     background: linear-gradient(rgb(75, 92, 104), rgb(4, 18, 29));
     margin: 0 auto;
-    font-family: Helvetica;
     border-radius: 30%;
+    font-family: 'Expletus Sans', cursive;
 }
 #B:hover {
     background: rgb(226, 170, 79);
@@ -113,11 +140,10 @@ body {
     line-height: 22px;
     height: 40px;
     overflow: hidden;
-    font-family: Arial, Verdana, "Helvetica CY", sans-serif;
     background: linear-gradient(rgb(75, 92, 104), rgb(4, 18, 29));
     margin: 0 auto;
-    font-family: Helvetica;
     border-radius: 30%;
+    font-family: 'Expletus Sans', cursive;
 }
 #C:hover {
     background: rgb(226, 170, 79);
@@ -127,41 +153,25 @@ body {
     color: white;
     padding: 0px 5%;
     text-align: center;
-    display: table;
+    display: table; 
     width: 340px;
     font-size: 80%;
     line-height: 22px;
     height: 40px;
     overflow: hidden;
-    font-family: Arial, Verdana, "Helvetica CY", sans-serif; 
     background: linear-gradient(rgb(75, 92, 104), rgb(4, 18, 29));
     margin: 0 auto;
-    font-family: Helvetica;
     border-radius: 30%;
+    font-family: 'Expletus Sans', cursive;
 }
 #D:hover {
     background: rgb(226, 170, 79);
     color: black;
 }
+.hidden-headers{
+    
+    text-align: center;
+}
   h1 {
     text-align: center;
-  }
-  #replay {
-    color: white;
-    padding: 0px 5%;
-    text-align: center;
-    display: table;
-    width: 30%;
-    font-size: 80%;
-    line-height: 22px;
-    height: 80px;
-    overflow: hidden;
-    font-family: 'Monoton', cursive;
-    background: linear-gradient(rgb(55, 68, 77), rgb(4, 18, 29));
-    margin: 0 auto;
-    border-radius: 30%;
-  }
-  #replay:hover {
-    background: rgb(226, 170, 79);
-    color: black;
-  }
+}

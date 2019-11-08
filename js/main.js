@@ -1,6 +1,4 @@
-//VARIABLES
 var audio = new Audio("js/song.mp3");
-// var video = new Video("js/video.mp4")
 var clock = document.getElementById("timer");
 var startBtn = document.getElementById("start");
 var questions = document.querySelector(".questions");
@@ -17,8 +15,6 @@ var winner = document.getElementById("winner");
 var questionNumber = document.getElementById("question_number")
 
 let questionNum = 0;
-questionNumber = 1 + questionNum
-
 
 const setOfQuestions = [
     {
@@ -42,7 +38,7 @@ const setOfQuestions = [
     {
         question: ["WHAT'S A CALLBACK FUNCTION", "WHAT DOES JQUERY RETURN WHEN IT IS PASSED A STRING REPRESENTING A CSS3 SELECTOR RULE?", "WHERE IS A FUNCTION PLACED WHEN INVOKED?"],
         options: [["A FOREACH METHOD", "AN ANONYMOUS FUNCTION PASSED AS AN ARGUMENT", "A FUNCTION PASSED AS AN ARGUMENT", "AN ARRAY OF FUNCTIONS"], ["AN OBJECT OF ARRAYS", "A CALLBACK", "AN ARRAY OF RULES", "A JQUERY OBJECT"],["CALLSTACK", "ARRAY ITERATOR", "CALLBACK", "CLASS OBJECTS"]],
-        correctAnswer: ["A FUNCTION BEING PASSED AS AN ARGUMENT", "A JQUERY OBJECT", "CALLSTACK"],
+        correctAnswer: ["A FUNCTION PASSED AS AN ARGUMENT", "A JQUERY OBJECT", "CALLSTACK"],
         userAnswer: null,
     },
     {
@@ -54,18 +50,22 @@ const setOfQuestions = [
 ];
 
 var randomNum = function(min, max) {
-    min = Math.ceil(0);
-    max = Math.floor(2);
-    return Math.floor(Math.random() * (max - min + 1)) + min; 
-  }
-  var x = randomNum(0, 2);
-console.log(randomNum(0, 2));
+    for (var i = 0; i < setOfQuestions.length; i++) {
+        // Keep creating random numbers until the number is unique
+            min = Math.ceil(0);
+            max = Math.floor(2);
+            return Math.floor(Math.random() * (max - min + 1)) + min; 
+         }
+    }
+
+ var x = randomNum();
+    console.log("THIS IS RANDOM NUM" , randomNum(0, 2));
 
 function checkAnswer(evt) {
     setOfQuestions[questionNum].userAnswer = evt.target.textContent; 
     console.log('THEIR ANSWER' , evt.target.textContent);
     console.log("QUESTION NUM ", questionNum)
-    if (questionNum === 5) {
+    if (questionNum === 4) {
         winner.style.visibility = "visible"; 
         answers.style.visibility = "hidden";
         questions.style.visibility = "hidden";
@@ -73,15 +73,12 @@ function checkAnswer(evt) {
         replayBtn.style.visibility = "visible"
         clearInterval(count);
         clearTimeout(timer); 
-        //questionNumber.style.visibility = "hidden";
         return;  
     }
-    console.log(setOfQuestions[questionNum].userAnswer)
-    console.log(setOfQuestions[questionNum].correctAnswer[x])
-
     if (setOfQuestions[questionNum].userAnswer === setOfQuestions[questionNum].correctAnswer[x]) {
         questionNum += 1;
-        randomNum(0, 2)
+        randomNum;
+        console.log("THIS IS INSIDE FUNCTION" , randomNum());
         showQuestions(questionNum);
      } else if (setOfQuestions[questionNum].userAnswer === null) {
         answers.style.visibility = "hidden";
@@ -89,7 +86,6 @@ function checkAnswer(evt) {
         ranOutOfTime.style.visibility = "visible";
         replayBtn.style.visibility = "visible";
         clock.style.visibility = "hidden";
-        //questionNumber.style.visibility = "hidden";
         clearInterval(count);
         clearTimeout(timer);  
     } else {
@@ -98,7 +94,6 @@ function checkAnswer(evt) {
         youLose.style.visibility = "visible";
         replayBtn.style.visibility = "visible";
         clock.style.visibility = "hidden";
-        //questionNumber.style.visibility = "hidden";
         clearInterval(count);
         clearTimeout(timer); 
     }
@@ -132,9 +127,8 @@ function checkForLoss() {
     } , questionNum === 0 ? 16000 : questionNum <= 2 ? 31000 : questionNum <= 4 ? 46000 : 0);     
 } 
   
-//APPEARANCE AT BEGINNING AND WHEN REPLAY IS CLICKED
+
 function init() {
-    //questionNumber.style.visibility = "hidden";
     replayBtn.style.visibility = "hidden";
     questions.style.visibility = "hidden";
     answers.style.visibility = "hidden";
@@ -174,7 +168,10 @@ function showQuestions(order) {
 replayBtn.addEventListener('click', function() {
     body.style.background = "url(https://i.imgur.com/1YQ2PRF.png) no-repeat center center fixed";
     body.style.backgroundColor = "rgb(67, 94, 167)";
+    body.style.backgroundSize = "500px";
     startBtn.style.visibility = "visible";
+    startBtn.style.marginTop = "50px";
+    startBtn.style.margin = "0 auto";
     questionNum = 0;
         init();
     });

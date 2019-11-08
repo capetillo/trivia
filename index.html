@@ -7,38 +7,33 @@
     <title>Who Wants To Be A Full-Stack Developer</title>
     <link rel="stylesheet" href="css/main.css">
     <script defer src="js/main.js"></script>
-    <link href="https://fonts.googleapis.com/css?family=Monoton&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Expletus+Sans|Faster+One&display=swap" rel="stylesheet">
     
 </head>
 <body>
-    <!-- <video autoplay controls>
-        <source src="js/video.mp4" type="video/mp4">
-    </video> -->
     <p id="timer"></p> 
-    <!-- <span source="https://imgur.com/1YQ2PRF"></span> -->
+    
+        <button id="start">START</button> 
+        <button id="replay">PLAY AGAIN</button>
    
-    <div class="button-container">
-            <button id="start">START</button> 
-    </div>
-        <div class="questions"></div>
-        <h1 id = "question_number"></h1>
-        <div class="answers">
-            <div id="line1">
-                <button id="A"></button>
-                
-                <button id="B"></button>
-            </div>
-            <div id="line2">
-                <button id="C"></button>
-                
-                <button id="D"></button>
-            </div>
+    <div class="hidden-headers">
+            <h1 class="loser">YOU LOST!</h1>
+            <h1 class="ran_out">YOU RAN OUT OF TIME</h1>
+            <h1 id="winner">YOU WON!</h1>
+        </div>
+        <div id = "questions_answers">
+            <div class="questions"></div>
+            <div class="answers">
+                <div id="line1">
+                    <button id="A"></button>
+                    <button id="B"></button>
+                </div>
+                <div id="line2">
+                    <button id="C"></button>
+                    <button id="D"></button>
+                </div>
         </div>
     </div>
-
-    <h1 class="loser">You Lost</h1>
-    <h1 class="ran_out">You Ran Out Of Time</h1>
-    <h1 id="winner">You Win!</h1>
-    <button id="replay">PLAY AGAIN</button>
+    
 </body>
 </html>
