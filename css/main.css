@@ -21,7 +21,7 @@ body {
     text-align: center;
     display: table;
     width: 30%;
-    font-size: 18px;
+    font-size: 80%;
     line-height: 22px;
     height: 80px;
     overflow: hidden;
@@ -41,7 +41,7 @@ body {
     text-align: center;
     display: table;
     width: 340px;
-    font-size: 28px;
+    font-size: 80%;
     line-height: 22px;
     height: 40px;
     overflow: hidden;
@@ -64,7 +64,7 @@ body {
     text-align: center;
     display: table;
     width: 340px;
-    font-size: 18px;
+    font-size: 80%;
     line-height: 22px;
     height: 40px;
     overflow: hidden;
@@ -84,7 +84,7 @@ body {
     text-align: center;
     display: table;
     width: 340px;
-    font-size: 18px;
+    font-size: 80%;
     line-height: 22px;
     height: 40px;
     overflow: hidden;
@@ -109,7 +109,7 @@ body {
     text-align: center;
     display: table;
     width: 340px;
-    font-size: 18px;
+    font-size: 80%;
     line-height: 22px;
     height: 40px;
     overflow: hidden;
@@ -129,7 +129,7 @@ body {
     text-align: center;
     display: table;
     width: 340px;
-    font-size: 18px;
+    font-size: 80%;
     line-height: 22px;
     height: 40px;
     overflow: hidden;
@@ -142,18 +142,26 @@ body {
 #D:hover {
     background: rgb(226, 170, 79);
     color: black;
-  }
-  #score {
-
-  }
+}
   h1 {
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    margin-top: -50px;
-    margin-left: -100px;
-    font-family: Georgia, 'Times New Roman', Times, serif;
+    text-align: center;
   }
   #replay {
-
+    color: white;
+    padding: 0px 5%;
+    text-align: center;
+    display: table;
+    width: 30%;
+    font-size: 80%;
+    line-height: 22px;
+    height: 80px;
+    overflow: hidden;
+    font-family: 'Monoton', cursive;
+    background: linear-gradient(rgb(55, 68, 77), rgb(4, 18, 29));
+    margin: 0 auto;
+    border-radius: 30%;
+  }
+  #replay:hover {
+    background: rgb(226, 170, 79);
+    color: black;
   }

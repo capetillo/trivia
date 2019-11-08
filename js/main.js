@@ -53,17 +53,19 @@ const setOfQuestions = [
     } 
 ];
 
-var randomNum = function getRandomIntInclusive(min, max) {
+var randomNum = function(min, max) {
     min = Math.ceil(0);
     max = Math.floor(2);
     return Math.floor(Math.random() * (max - min + 1)) + min; 
   }
+  var x = randomNum(0, 2);
+console.log(randomNum(0, 2));
 
 function checkAnswer(evt) {
     setOfQuestions[questionNum].userAnswer = evt.target.textContent; 
     console.log('THEIR ANSWER' , evt.target.textContent);
     console.log("QUESTION NUM ", questionNum)
-    if (questionNum === 13) {
+    if (questionNum === 5) {
         winner.style.visibility = "visible"; 
         answers.style.visibility = "hidden";
         questions.style.visibility = "hidden";
@@ -74,9 +76,12 @@ function checkAnswer(evt) {
         //questionNumber.style.visibility = "hidden";
         return;  
     }
-    if (setOfQuestions[questionNum].userAnswer === setOfQuestions[questionNum].correctAnswer) {
+    console.log(setOfQuestions[questionNum].userAnswer)
+    console.log(setOfQuestions[questionNum].correctAnswer[x])
+
+    if (setOfQuestions[questionNum].userAnswer === setOfQuestions[questionNum].correctAnswer[x]) {
         questionNum += 1;
-        randomNum;
+        randomNum(0, 2)
         showQuestions(questionNum);
      } else if (setOfQuestions[questionNum].userAnswer === null) {
         answers.style.visibility = "hidden";
@@ -144,14 +149,16 @@ function init() {
         }
 }
 
+
+
 //Makes questions + options visible
 function showQuestions(order) {
     clearTimeout(timer);
-    questions.innerHTML = setOfQuestions[order].question[randomNum]; 
-    answerA.innerHTML = setOfQuestions[order].options[randomNum][0];
-    answerB.innerHTML = setOfQuestions[order].options[randomNum][1];
-    answerC.innerHTML = setOfQuestions[order].options[randomNum][2];
-    answerD.innerHTML = setOfQuestions[order].options[randomNum][3];
+    questions.innerHTML = setOfQuestions[order].question[x]; 
+    answerA.innerHTML = setOfQuestions[order].options[x][0];
+    answerB.innerHTML = setOfQuestions[order].options[x][1];
+    answerC.innerHTML = setOfQuestions[order].options[x][2];
+    answerD.innerHTML = setOfQuestions[order].options[x][3];
     clearInterval(count);
     checkForLoss(); 
     if (questionNum === 0) {
@@ -185,6 +192,7 @@ function begin() {
     audio.play();
     clock.style.visibility = "visible";
     showQuestions(questionNum);
+    randomNum(0, 2);
 }
 
 startBtn.addEventListener("click", begin); 
