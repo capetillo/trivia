@@ -17,8 +17,6 @@ var winner = document.getElementById("winner");
 var questionNumber = document.getElementById("question_number")
 
 let questionNum = 0;
-// questionNumber = 1 + questionNum
-
 
 const setOfQuestions = [
     {
@@ -62,8 +60,6 @@ var randomNum = function(min, max) {
 
 function checkAnswer(evt) {
     setOfQuestions[questionNum].userAnswer = evt.target.textContent; 
-    console.log('THEIR ANSWER' , evt.target.textContent);
-    console.log("QUESTION NUM ", questionNum)
     if (questionNum === 5) {
         winner.style.visibility = "visible"; 
         answers.style.visibility = "hidden";
@@ -72,11 +68,8 @@ function checkAnswer(evt) {
         replayBtn.style.visibility = "visible"
         clearInterval(count);
         clearTimeout(timer); 
-        //questionNumber.style.visibility = "hidden";
         return;  
     }
-    console.log(setOfQuestions[questionNum].userAnswer)
-    console.log(setOfQuestions[questionNum].correctAnswer[x])
 
     if (setOfQuestions[questionNum].userAnswer === setOfQuestions[questionNum].correctAnswer[x]) {
         questionNum += 1;
@@ -87,7 +80,6 @@ function checkAnswer(evt) {
         ranOutOfTime.style.visibility = "visible";
         replayBtn.style.visibility = "visible";
         clock.style.visibility = "hidden";
-        //questionNumber.style.visibility = "hidden";
         clearInterval(count);
         clearTimeout(timer);  
     } else {
@@ -96,7 +88,6 @@ function checkAnswer(evt) {
         youLose.style.visibility = "visible";
         replayBtn.style.visibility = "visible";
         clock.style.visibility = "hidden";
-        //questionNumber.style.visibility = "hidden";
         clearInterval(count);
         clearTimeout(timer); 
     }
@@ -130,9 +121,7 @@ function checkForLoss() {
     } , questionNum === 0 ? 16000 : questionNum <= 2 ? 31000 : questionNum <= 4 ? 46000 : 0);     
 } 
   
-//APPEARANCE AT BEGINNING AND WHEN REPLAY IS CLICKED
 function init() {
-    //questionNumber.style.visibility = "hidden";
     replayBtn.style.visibility = "hidden";
     questions.style.visibility = "hidden";
     answers.style.visibility = "hidden";
@@ -148,11 +137,8 @@ function init() {
 }
 
 
-
-//Makes questions + options visible
 function showQuestions(order) {
      x = randomNum(0, 2);
-    console.log("THIS IS RANDOM NUM" , x);
     clearTimeout(timer);
     questions.innerHTML = setOfQuestions[order].question[x]; 
     answerA.innerHTML = setOfQuestions[order].options[x][0];
@@ -179,10 +165,7 @@ replayBtn.addEventListener('click', function() {
         init();
     });
 
-
-//Makes start button's visibility hidden and questions visible
 function begin() {
-    //questionNumber.style.visibility = "visible";
     winner.style.visibility = "hidden";
     replayBtn.style.visibility = "hidden";
     startBtn.style.visibility = "hidden";
@@ -192,7 +175,6 @@ function begin() {
     audio.play();
     clock.style.visibility = "visible";
     showQuestions(questionNum);
-    // randomNum(0, 2);
 }
 
 startBtn.addEventListener("click", begin); 
