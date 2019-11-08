@@ -59,12 +59,9 @@ var randomNum = function(min, max) {
     }
 
  var x = randomNum();
-    console.log("THIS IS RANDOM NUM" , randomNum(0, 2));
 
 function checkAnswer(evt) {
     setOfQuestions[questionNum].userAnswer = evt.target.textContent; 
-    console.log('THEIR ANSWER' , evt.target.textContent);
-    console.log("QUESTION NUM ", questionNum)
     if (questionNum === 4) {
         winner.style.visibility = "visible"; 
         answers.style.visibility = "hidden";
@@ -78,7 +75,6 @@ function checkAnswer(evt) {
     if (setOfQuestions[questionNum].userAnswer === setOfQuestions[questionNum].correctAnswer[x]) {
         questionNum += 1;
         randomNum;
-        console.log("THIS IS INSIDE FUNCTION" , randomNum());
         showQuestions(questionNum);
      } else if (setOfQuestions[questionNum].userAnswer === null) {
         answers.style.visibility = "hidden";
@@ -100,7 +96,6 @@ function checkAnswer(evt) {
 }
 
 let count;
-
 function startTimer(seconds) {
     count = setInterval(function() {
         clock.innerHTML = seconds;
@@ -113,9 +108,7 @@ function startTimer(seconds) {
 }
 
 let timer;
-
 function checkForLoss() {
-   
     timer = setTimeout(function() {
             
              if (questions.style.visibility !== "hidden" && answers.style.visibility !== "hidden") {
@@ -126,7 +119,6 @@ function checkForLoss() {
             }
     } , questionNum === 0 ? 16000 : questionNum <= 2 ? 31000 : questionNum <= 4 ? 46000 : 0);     
 } 
-  
 
 function init() {
     replayBtn.style.visibility = "hidden";
@@ -143,9 +135,6 @@ function init() {
         }
 }
 
-
-
-//Makes questions + options visible
 function showQuestions(order) {
     clearTimeout(timer);
     questions.innerHTML = setOfQuestions[order].question[x]; 
@@ -161,8 +150,7 @@ function showQuestions(order) {
         startTimer(30)
     } else {
         startTimer(45)
-    }
-    
+    } 
 }
 
 replayBtn.addEventListener('click', function() {
@@ -176,10 +164,7 @@ replayBtn.addEventListener('click', function() {
         init();
     });
 
-
-//Makes start button's visibility hidden and questions visible
 function begin() {
-    //questionNumber.style.visibility = "visible";
     winner.style.visibility = "hidden";
     replayBtn.style.visibility = "hidden";
     startBtn.style.visibility = "hidden";
@@ -193,5 +178,4 @@ function begin() {
 }
 
 startBtn.addEventListener("click", begin); 
-
 init();

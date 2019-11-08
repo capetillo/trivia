@@ -12,6 +12,7 @@ body {
 #timer {
     color: white;
     text-align: center;
+    font-size: 30px;
 }
  #start {
     display: block;
@@ -62,9 +63,6 @@ body {
     background: rgb(226, 170, 79);
     color: black;
   } 
-/* #questions_answers {
-    display: flex;
-} */
   .questions {
     position: relative;
     justify-content: center;

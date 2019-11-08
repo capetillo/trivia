@@ -1,21 +1,16 @@
-A README.md file with these sections:
+## WHO WANTS TO BE A FULL-STACK DEVELOPER
 
-☐ <Your game's title>: A description of your game. Background info of the game is a nice touch.
-MY GAME IS A TRIVIA GAME WITH A THEME OF SOFTWARE ENGINEERING QUESTIONS. THE QUESTIONS ARE RELATED TO CODING BECAUSE IN RESEARCHING THE QUESTIONS, I LEARNED MORE ABOUT HOW MY OWN GAME IS OPERATING. THE QUESTIONS HAVE AN ASCENDING RANGE IN DIFFICULTY. YOU HAVE 15 SECONDS TO ANSWER QUESTIONS 1, 30 SECONDS TO ANSWER QUESTIONS 2 AND 3, AND 45 SECONDS TO ANSWER QUESTIONS 4 AND 5. IF YOU ANSWER ALL QUESTIONS CORRECTLY, YOU WIN THE GAME. IF YOU ANSWER A QUESTION INCORRECTLY, YOU LOSE BUT HAVE THE OPTION OF STARTING OVER AGAIN. 
-☐ Screenshot(s): Images of your actual game.
-TBD
+Who Wants To Be A Full-Stack Developer is a 5-question trivia game inspired by Who Wants To Be A Millionaire. The questions theme are related to software engineering and they ascend in difficulty. You have 15 seconds to answer question 1, 30 seconds to answer question 2-3, and 45 seconds to answer questions 4-5. If you answer incorrectly, the game ends but you have the option to play again by clicking the replay button. You win when you answer all 5 questions correctly. 
 
-☐ Technologies Used: List of the technologies used, e.g., JavaScript, HTML, CSS...
-JavaScript, HTML, CSS
+![](https://i.imgur.com/7O5YuED.png)
 
-☐ Getting Started: In this section include the link to your deployed game and any instructions you deem important.
-LINK
+JavaScript, HTML, and CSS were used to design and run this game. 
 
-☐ Next Steps: Planned future enhancements (icebox items).
-ADD BUTTONS ON TOP (LIFELINE, 50:50, AND ASK AUDIENCE) AND VIDEOS IN BETWEEN 
-LIFELINE WILL GIVE YOU THE RIGHT ANSWER 
-50:50 WILL GIVE YOU THE RIGHT ANSWER AND A WRONG ANSWER
-AUDIENCE WILL GIVE RANDOM STATS 
+https://capetillo.github.io/trivia/
+
+Have your sounds on to enjoy the rush of the game. 
 
 
-Note: Don't underestimate the value of a well crafted README.md. The README.md introduces your project to prospective employers and forms their first impression of your work!
+## NEXT STEPS
+
+Future steps include adding a scoreboard, the question number, a better designed timer, and getting the randomizer of questions to actually work. A lifeline button, a 50:50 button, and an audience button will be added as well. The lifeline button will display the right answer, the 50:50 button will display the right answer and the wrong answer, and the function of the audience button is yet to be determined. These buttons will only be available once. 
